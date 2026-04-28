@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.5 on win32)" generated="2026-03-28T10:25:26.737528" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Capg" source="C:\Users\BHAVRAJ SAIREM\Desktop\robot_capg">
+<suite id="s1-s1" name="Robot Understand" source="C:\Users\BHAVRAJ SAIREM\Desktop\robot_capg\robot_understand.robot">
+<test id="s1-s1-t1" name="Opening Chrome Browser" line="36">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-28T10:25:27.329081" level="INFO">Opening browser 'chrome' to base url 'https://www.formula1.com/'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-28T10:25:27.328085" elapsed="3.967289"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-28T10:25:31.296713" elapsed="0.081790"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-28T10:25:31.381105" level="INFO">navigated to youtube</msg>
+<arg>navigated to youtube</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-28T10:25:31.380013" elapsed="0.001092"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>navigated to youtube</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-28T10:25:31.381105" elapsed="0.001053"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${fighter_jet.boeing}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-28T10:25:31.382158" elapsed="0.000976"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${f1_cars}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-28T10:25:31.384234" elapsed="0.000998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-28T10:25:34.388044" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-28T10:25:31.386316" elapsed="3.002429"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-28T10:25:34.388745" elapsed="2.647462"/>
+</kw>
+<doc>Chrome browser navigating to https://www.youtube.com</doc>
+<status status="PASS" start="2026-03-28T10:25:27.326074" elapsed="9.711132"/>
+</test>
+<doc>Opening of browsers</doc>
+<status status="PASS" start="2026-03-28T10:25:26.827932" elapsed="10.210670"/>
+</suite>
+<status status="PASS" start="2026-03-28T10:25:26.741703" elapsed="10.299303"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot Capg" id="s1" pass="1" fail="0" skip="0">Robot Capg</stat>
+<stat name="Robot Understand" id="s1-s1" pass="1" fail="0" skip="0">Robot Capg.Robot Understand</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
