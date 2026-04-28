@@ -1,0 +1,15 @@
+1775115299535	geckodriver	INFO	Listening on 127.0.0.1:60098
+1775115302621	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60099" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\BHAVRA~1\\AppData\\Local\\Temp\\rust_mozprofileBZzirV"
+Dynamically enable window occlusion 0
+1775115303190	Marionette	INFO	Marionette enabled
+1775115303341	Marionette	INFO	Listening on port 60110
+WebDriver BiDi listening on ws://127.0.0.1:60099
+Read port: 60110
+1775115303537	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js, line 4: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: "Experiment visual-card-updates has unknown featureId: newtabRefinedCardsLayout"
+1775115313966	Marionette	INFO	Stopped listening on port 60110
+Dynamically enable window occlusion 1
+console.error: Translations: "Failed to run language detection." (new AbortError("Actor 'Translations' destroyed before query 'Translations:GetDocumentElementLang' was resolved", (void 0), 587))
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+console.error: (new Error("Unable to arm timer, the object has been finalized.", "resource://gre/modules/DeferredTask.sys.mjs", 231))

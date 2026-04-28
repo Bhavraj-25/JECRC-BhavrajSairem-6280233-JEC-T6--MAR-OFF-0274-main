@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.5 on win32)" generated="2026-04-02T15:14:49.065984" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Sign Up" source="C:\Users\BHAVRAJ SAIREM\Desktop\sauce-demo\tests\functional\test_sign_up.robot">
+<test id="s1-t1" name="TC01 Register User" line="17">
+<kw name="Open Applications" owner="common_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:14:49.786273" level="INFO">Opening browser 'chrome' to base url 'https://sauce-demo.myshopify.com/'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-02T15:14:49.786273" elapsed="7.079300"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-02T15:14:56.866703" elapsed="0.050594"/>
+</kw>
+<arg>https://sauce-demo.myshopify.com/</arg>
+<doc>Opens the application</doc>
+<status status="PASS" start="2026-04-02T15:14:49.783943" elapsed="7.133354"/>
+</kw>
+<kw name="Sign Up To The Application" owner="sign_up_page">
+<msg time="2026-04-02T15:14:56.918297" level="FAIL">Keyword 'sign_up_page.Sign Up To The Application' expected 4 arguments, got 3.</msg>
+<arg>Tony</arg>
+<arg>Stark</arg>
+<arg>tonylovescheeseburger@gmail.com</arg>
+<doc>This is for signing up to the application</doc>
+<status status="FAIL" start="2026-04-02T15:14:56.918297" elapsed="0.001185">Keyword 'sign_up_page.Sign Up To The Application' expected 4 arguments, got 3.</status>
+</kw>
+<kw name="CLose Applications" owner="common_resources" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-04-02T15:14:56.920971" elapsed="6.600622"/>
+</kw>
+<status status="PASS" start="2026-04-02T15:14:56.919482" elapsed="6.603171"/>
+</kw>
+<doc>Checking if the user can register or not</doc>
+<tag>functional</tag>
+<status status="FAIL" start="2026-04-02T15:14:49.782408" elapsed="13.740245">Keyword 'sign_up_page.Sign Up To The Application' expected 4 arguments, got 3.</status>
+</test>
+<status status="FAIL" start="2026-04-02T15:14:49.069982" elapsed="14.455501"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">functional</stat>
+</tag>
+<suite>
+<stat name="Test Sign Up" id="s1" pass="0" fail="1" skip="0">Test Sign Up</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-02T15:14:49.776277" level="ERROR">Error in file 'C:\Users\BHAVRAJ SAIREM\Desktop\sauce-demo\resource\pages\sign_up_page.robot' on line 3: Error in file 'C:\Users\BHAVRAJ SAIREM\Desktop\sauce-demo\locators\sign_up_locators.robot' on line 8: Resource file with 'Test Cases' section is invalid.</msg>
+</errors>
+</robot>
