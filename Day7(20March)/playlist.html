@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists & Songs</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+        select, button, textarea {
+            display: block;
+            margin-top: 15px;
+            width: 300px;
+            padding: 8px;
+        }
+        textarea {
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Select Songs (Multi Select)</h2>
+
+<!-- Multi Select with optgroup -->
+<select id="songs" multiple>
+
+    <optgroup label="Linkin Park">
+        <option>Numb</option>
+        <option>What I've Done</option>
+        <option>In The End</option>
+        <option>The Emptiness Machine</option>
+        <option>Heavy Is The Crown</option>
+        <option>Breaking The Habit</option>
+        <option>Crawling</option>
+    </optgroup>
+
+    <optgroup label="Ed Sheeran">
+        <option>Galway Girl</option>
+        <option>Perfect</option>
+        <option>Shape of You</option>
+        <option>Photography</option>
+        <option>Thinking Out Loud</option>
+    </optgroup>
+
+    <optgroup label="Alan Walker">
+        <option>Faded</option>
+        <option>Alone</option>
+        <option>Sing Me To Sleep</option>
+        <option>On My Way</option>
+        <option>Diamond Heart</option>
+        <option>Tired</option>
+    </optgroup>
+
+    <optgroup label="Twenty One Pilots">
+        <option>Holding On To You</option>
+        <option>Chlorine</option>
+        <option>House Of Gold</option>
+        <option>Tear In My Heart</option>
+    </optgroup>
+
+    <optgroup label="Taylor Swift">
+        <option>Wildest Dreams</option>
+        <option>Blank Space</option>
+        <option>Shake It Off</option>
+        <option>Cruel Summer</option>
+    </optgroup>
+
+    <optgroup label="Justin">
+        <option>Baby</option>
+        <option>Sorry</option>
+        <option>Holy</option>
+        <option>Love Me</option>
+        <option>Never Say Never</option>
+        <option>What Do You Mean</option>
+    </optgroup>
+
+    <optgroup label="One Direction">
+        <option>Perfect</option>
+        <option>Story Of My Life</option>
+        <option>You & I</option>
+        <option>Night Changes</option>
+        <option>Stockholm Syndrome</option>
+    </optgroup>
+
+    <optgroup label="Avicii">
+        <option>SOS</option>
+        <option>The Nights</option>
+        <option>Wake Me Up</option>
+        <option>Waiting For Love</option>
+    </optgroup>
+
+    <optgroup label="Maroon 5">
+        <option>Girls like you</option>
+        <option>Animals</option>
+        <option>Sugar</option>
+        <option>Locked Away</option>
+        <option>Maps</option>
+    </optgroup>
+
+    <optgroup label="Dua Lipa">
+        <option>One Kiss</option>
+        <option>Blow your mind</option>
+        <option>Potion</option>
+        <option>Levitating</option>
+        <option>Houdini</option>
+    </optgroup>
+
+</select>
+
+<button onclick="addToPlaylist()">Add to Playlist</button>
+
+<h3>Playlist</h3>
+<textarea id="playlist" readonly></textarea>
+
+<script>
+function addToPlaylist() {
+    let songs = document.getElementById("songs");
+    let playlist = document.getElementById("playlist");
+
+    let selected = Array.from(songs.selectedOptions)
+                        .map(option => option.value);
+
+    if (selected.length === 0) {
+        alert("Select songs!");
+        return;
+    }
+
+    playlist.value += selected.join(", ") + "\n";
+}
+</script>
+
+</body>
+</html>
