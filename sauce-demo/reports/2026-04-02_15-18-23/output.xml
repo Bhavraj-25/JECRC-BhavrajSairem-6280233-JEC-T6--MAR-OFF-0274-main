@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.5 on win32)" generated="2026-04-02T15:18:24.032327" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Sign Up" source="C:\Users\BHAVRAJ SAIREM\Desktop\sauce-demo\tests\functional\test_sign_up.robot">
+<test id="s1-t1" name="TC01 Register User" line="17">
+<kw name="Open Applications" owner="common_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:18:24.708765" level="INFO">Opening browser 'chrome' to base url 'https://sauce-demo.myshopify.com/'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-02T15:18:24.708765" elapsed="5.666903"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-02T15:18:30.376702" elapsed="0.072122"/>
+</kw>
+<arg>https://sauce-demo.myshopify.com/</arg>
+<doc>Opens the application</doc>
+<status status="PASS" start="2026-04-02T15:18:24.707653" elapsed="5.741171"/>
+</kw>
+<kw name="Sign Up To The Application" owner="sign_up_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:18:30.452306" level="INFO">Clicking element 'xpath=(//a[@id="customer_register_link"])[1]'.</msg>
+<arg>${sign_up_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:18:30.451305" elapsed="1.183319"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:18:31.635897" level="INFO">Clicking on sign up link</msg>
+<arg>Clicking on sign up link</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:18:31.634624" elapsed="0.001273"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:18:31.637173" level="INFO">Typing text 'Tony' into text field '//input[@id="first_name"]'.</msg>
+<arg>${first_name_field}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:18:31.635897" elapsed="0.339059"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:18:31.975974" level="INFO">Entering first name</msg>
+<arg>Entering first name</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:18:31.975974" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:18:31.977811" level="INFO">Typing text 'Stark' into text field '//input[@id="last_name"]'.</msg>
+<arg>${last_name_field}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:18:31.977298" elapsed="0.343317"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:18:32.321603" level="INFO">Entering last name</msg>
+<arg>Entering last name</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:18:32.321603" elapsed="0.000998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:18:32.323602" level="INFO">Typing text 'tonylovescheeseburger@gmail.com' into text field '//input[@id="email"]'.</msg>
+<arg>${email_field}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:18:32.322601" elapsed="0.923883"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:18:33.248475" level="INFO">Entering email id</msg>
+<arg>Entering email id</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:18:33.247477" elapsed="0.000998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:18:33.249474" level="INFO">Typing text 'password123' into text field '//input[@id="password"]'.</msg>
+<arg>${pwd_field}</arg>
+<arg>${pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:18:33.248475" elapsed="0.241053"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:18:33.490527" level="INFO">Entering password</msg>
+<arg>Entering password</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:18:33.489528" elapsed="0.000999"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:18:33.491527" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<arg>${create_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:18:33.491527" elapsed="0.604980"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:18:34.097543" level="INFO">Clicking on create button</msg>
+<arg>Clicking on create button</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:18:34.096507" elapsed="0.001036"/>
+</kw>
+<arg>Tony</arg>
+<arg>Stark</arg>
+<arg>tonylovescheeseburger@gmail.com</arg>
+<arg>password123</arg>
+<doc>This is for signing up to the application</doc>
+<status status="PASS" start="2026-04-02T15:18:30.450321" elapsed="3.647222"/>
+</kw>
+<kw name="CLose Applications" owner="common_resources" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-04-02T15:18:34.099509" elapsed="6.791907"/>
+</kw>
+<status status="PASS" start="2026-04-02T15:18:34.098550" elapsed="6.792866"/>
+</kw>
+<doc>Checking if the user can register or not</doc>
+<tag>functional</tag>
+<status status="PASS" start="2026-04-02T15:18:24.705010" elapsed="16.187425"/>
+</test>
+<status status="PASS" start="2026-04-02T15:18:24.036858" elapsed="16.857179"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">functional</stat>
+</tag>
+<suite>
+<stat name="Test Sign Up" id="s1" pass="1" fail="0" skip="0">Test Sign Up</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

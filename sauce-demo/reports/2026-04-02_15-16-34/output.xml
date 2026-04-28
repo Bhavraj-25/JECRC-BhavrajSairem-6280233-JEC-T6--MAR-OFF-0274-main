@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.5 on win32)" generated="2026-04-02T15:16:35.330581" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Sign Up" source="C:\Users\BHAVRAJ SAIREM\Desktop\sauce-demo\tests\functional\test_sign_up.robot">
+<test id="s1-t1" name="TC01 Register User" line="17">
+<kw name="Open Applications" owner="common_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:16:36.035326" level="INFO">Opening browser 'chrome' to base url 'https://sauce-demo.myshopify.com/'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-02T15:16:36.035326" elapsed="4.715027"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-02T15:16:40.750353" elapsed="0.086643"/>
+</kw>
+<arg>https://sauce-demo.myshopify.com/</arg>
+<doc>Opens the application</doc>
+<status status="PASS" start="2026-04-02T15:16:36.033270" elapsed="4.803726"/>
+</kw>
+<kw name="Sign Up To The Application" owner="sign_up_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:16:40.840996" level="INFO">Clicking element 'xpath=(//a[@id="customer_register_link"])[1]'.</msg>
+<arg>${sign_up_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:16:40.839996" elapsed="1.293313"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:16:42.134283" level="INFO">Clicking on sign up link</msg>
+<arg>Clicking on sign up link</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:16:42.133309" elapsed="0.000974"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:16:42.137929" level="INFO">Typing text 'Tony' into text field '//input[@id="first_name"]'.</msg>
+<arg>${first_name_field}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:16:42.136731" elapsed="0.374218"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:16:42.512129" level="INFO">Entering first name</msg>
+<arg>Entering first name</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:16:42.512129" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:16:42.513171" level="INFO">Typing text 'Stark' into text field '//input[@id="last_name"]'.</msg>
+<arg>${last_name_field}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:16:42.513171" elapsed="0.280792"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:16:42.795161" level="INFO">Entering last name</msg>
+<arg>Entering last name</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:16:42.795161" elapsed="0.000988"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:16:42.797144" level="INFO">Typing text 'tonylovescheeseburger@gmail.com' into text field '//input[@id="last_name"]'.</msg>
+<arg>${email_field}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:16:42.796149" elapsed="0.896367"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:16:43.693514" level="INFO">Entering email id</msg>
+<arg>Entering email id</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:16:43.692516" elapsed="0.000998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:16:43.694516" level="INFO">Typing text 'password123' into text field '//input[@id="password"]'.</msg>
+<arg>${pwd_field}</arg>
+<arg>${pwd}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-02T15:16:43.693514" elapsed="0.212715"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-02T15:16:43.907355" level="INFO">Entering password</msg>
+<arg>Entering password</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-02T15:16:43.907355" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-02T15:16:43.908354" level="INFO">Clicking element '//input@[type="submit"]'.</msg>
+<msg time="2026-04-02T15:16:44.093538" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-02T15:16:44.093538" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //input@[type="submit"] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input@[type="submit"]' is not a valid XPath expression.
+  (Session info: chrome=146.0.7680.165); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7deca29c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff7de9ca0d0+14e90]
+	chromedriver!(No symbol) [0x7ff7de72db2d]
+	chromedriver!(No symbol) [0x7ff7de735ab1]
+	chromedriver!(No symbol) [0x7ff7de738bc5]
+	chromedriver!(No symbol) [0x7ff7de738c8f]
+	chromedriver!(No symbol) [0x7ff7de78631e]
+	chromedriver!(No symbol) [0x7ff7de786eac]
+	chromedriver!(No symbol) [0x7ff7de7d7017]
+	chromedriver!(No symbol) [0x7ff7de7d3b9b]
+	chromedriver!(No symbol) [0x7ff7de779298]
+	chromedriver!(No symbol) [0x7ff7de77a183]
+	chromedriver!GetHandleVerifier [0x7ff7deccde0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff7decc8588+313348]
+	chromedriver!GetHandleVerifier [0x7ff7dece9d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff7de9e6785+31545]
+	chromedriver!GetHandleVerifier [0x7ff7de9efacc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff7de9d3634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7de9d37e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff7de9b7e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff9050fe8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff90708c48c+2c]
+</msg>
+<arg>${create_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-04-02T15:16:43.908354" elapsed="0.200674">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //input@[type="submit"] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input@[type="submit"]' is not a valid XPath expression.
+  (Session info: chrome=146.0.7680.165); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7deca29c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff7de9ca0d0+14e90]
+	chromedriver!(No symbol) [0x7ff7de72db2d]
+	chromedriver!(No symbol) [0x7ff7de735ab1]
+	chromedriver!(No symbol) [0x7ff7de738bc5]
+	chromedriver!(No symbol) [0x7ff7de738c8f]
+	chromedriver!(No symbol) [0x7ff7de78631e]
+	chromedriver!(No symbol) [0x7ff7de786eac]
+	chromedriver!(No symbol) [0x7ff7de7d7017]
+	chromedriver!(No symbol) [0x7ff7de7d3b9b]
+	chromedriver!(No symbol) [0x7ff7de779298]
+	chromedriver!(No symbol) [0x7ff7de77a183]
+	chromedriver!GetHandleVerifier [0x7ff7deccde0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff7decc8588+313348]
+	chromedriver!GetHandleVerifier [0x7ff7dece9d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff7de9e6785+31545]
+	chromedriver!GetHandleVerifier [0x7ff7de9efacc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff7de9d3634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7de9d37e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff7de9b7e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff9050fe8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff90708c48c+2c]
+</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Clicking on create button</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-02T15:16:44.110025" elapsed="0.000000"/>
+</kw>
+<arg>Tony</arg>
+<arg>Stark</arg>
+<arg>tonylovescheeseburger@gmail.com</arg>
+<arg>password123</arg>
+<doc>This is for signing up to the application</doc>
+<status status="FAIL" start="2026-04-02T15:16:40.837996" elapsed="3.272029">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //input@[type="submit"] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input@[type="submit"]' is not a valid XPath expression.
+  (Session info: chrome=146.0.7680.165); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7deca29c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff7de9ca0d0+14e90]
+	chromedriver!(No symbol) [0x7ff7de72db2d]
+	chromedriver!(No symbol) [0x7ff7de735ab1]
+	chromedriver!(No symbol) [0x7ff7de738bc5]
+	chromedriver!(No symbol) [0x7ff7de738c8f]
+	chromedriver!(No symbol) [0x7ff7de78631e]
+	chromedriver!(No symbol) [0x7ff7de786eac]
+	chromedriver!(No symbol) [0x7ff7de7d7017]
+	chromedriver!(No symbol) [0x7ff7de7d3b9b]
+	chromedriver!(No symbol) [0x7ff7de779298]
+	chromedriver!(No symbol) [0x7ff7de77a183]
+	chromedriver!GetHandleVerifier [0x7ff7deccde0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff7decc8588+313348]
+	chromedriver!GetHandleVerifier [0x7ff7dece9d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff7de9e6785+31545]
+	chromedriver!GetHandleVerifier [0x7ff7de9efacc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff7de9d3634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7de9d37e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff7de9b7e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff9050fe8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff90708c48c+2c]
+</status>
+</kw>
+<kw name="CLose Applications" owner="common_resources" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-04-02T15:16:44.112028" elapsed="2.736222"/>
+</kw>
+<status status="PASS" start="2026-04-02T15:16:44.111026" elapsed="2.737224"/>
+</kw>
+<doc>Checking if the user can register or not</doc>
+<tag>functional</tag>
+<status status="FAIL" start="2026-04-02T15:16:36.031752" elapsed="10.817499">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //input@[type="submit"] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input@[type="submit"]' is not a valid XPath expression.
+  (Session info: chrome=146.0.7680.165); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7deca29c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff7de9ca0d0+14e90]
+	chromedriver!(No symbol) [0x7ff7de72db2d]
+	chromedriver!(No symbol) [0x7ff7de735ab1]
+	chromedriver!(No symbol) [0x7ff7de738bc5]
+	chromedriver!(No symbol) [0x7ff7de738c8f]
+	chromedriver!(No symbol) [0x7ff7de78631e]
+	chromedriver!(No symbol) [0x7ff7de786eac]
+	chromedriver!(No symbol) [0x7ff7de7d7017]
+	chromedriver!(No symbol) [0x7ff7de7d3b9b]
+	chromedriver!(No symbol) [0x7ff7de779298]
+	chromedriver!(No symbol) [0x7ff7de77a183]
+	chromedriver!GetHandleVerifier [0x7ff7deccde0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff7decc8588+313348]
+	chromedriver!GetHandleVerifier [0x7ff7dece9d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff7de9e6785+31545]
+	chromedriver!GetHandleVerifier [0x7ff7de9efacc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff7de9d3634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff7de9d37e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff7de9b7e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff9050fe8d7+17]
+	ntdll!RtlUserThreadStart [0x7ff90708c48c+2c]
+</status>
+</test>
+<status status="FAIL" start="2026-04-02T15:16:35.335574" elapsed="11.516679"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">functional</stat>
+</tag>
+<suite>
+<stat name="Test Sign Up" id="s1" pass="0" fail="1" skip="0">Test Sign Up</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

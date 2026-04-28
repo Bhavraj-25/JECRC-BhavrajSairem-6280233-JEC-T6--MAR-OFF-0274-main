@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.5 on win32)" generated="2026-04-02T13:04:58.289117" rpa="false" schemaversion="5">
+<suite id="s1" name="Trial" source="C:\Users\BHAVRAJ SAIREM\Desktop\sauce-demo\trial.robot">
+<test id="s1-t1" name="tc1" line="8">
+<kw name="Open Applications" owner="common_resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-02T13:04:58.780853" level="INFO">Opening browser 'FireFox' to base url 'https://sauce-demo.myshopify.com/'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-02T13:04:58.780853" elapsed="9.853631"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-02T13:05:08.634484" elapsed="0.318154"/>
+</kw>
+<arg>https://sauce-demo.myshopify.com/</arg>
+<doc>Opens the application</doc>
+<status status="PASS" start="2026-04-02T13:04:58.780853" elapsed="10.171785"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-02T13:05:13.953995" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-02T13:05:08.952638" elapsed="5.001357"/>
+</kw>
+<kw name="CLose Applications" owner="common_resources">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-04-02T13:05:13.955341" elapsed="8.064072"/>
+</kw>
+<status status="PASS" start="2026-04-02T13:05:13.953995" elapsed="8.065418"/>
+</kw>
+<status status="PASS" start="2026-04-02T13:04:58.775244" elapsed="23.245166"/>
+</test>
+<status status="PASS" start="2026-04-02T13:04:58.289117" elapsed="23.732297"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Trial" id="s1" pass="1" fail="0" skip="0">Trial</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
