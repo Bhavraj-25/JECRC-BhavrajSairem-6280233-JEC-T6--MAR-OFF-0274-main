@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.5 on win32)" generated="2026-04-28T19:19:05.846139" rpa="false" schemaversion="5">
+<suite id="s1" name="Main2" source="C:\Users\BHAVRAJ SAIREM\Desktop\CAPG_TRACK_COURSE\DAY_WISE\robot_capg\Robot_Req\ROBOT_REQUEST\main2.robot">
+<test id="s1-t1" name="Add Pet" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:06.420583" level="INFO">Creating Session using : alias=petApi, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>petApi</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-28T19:19:06.420583" elapsed="0.000997"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-28T19:19:06.422581" level="INFO">${url} = {'status': 'available'}</msg>
+<var>${url}</var>
+<arg>status=available</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-28T19:19:06.421580" elapsed="0.001001"/>
+</kw>
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2026-04-28T19:19:06.424592" level="INFO">${payload} = {'id': 55, 'category': {'id': 55, 'name': 'jason'}, 'name': 'doggie', 'photoUrls': ['string'], 'tags': [{'id': 55, 'name': 'jason'}], 'status': 'available'}</msg>
+<var>${payload}</var>
+<arg>C:\\Users\\BHAVRAJ SAIREM\\Desktop\\CAPG_TRACK_COURSE\\DAY_WISE\\robot_capg\\Robot_Req\\ROBOT_REQUEST/Data/add_pet.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2026-04-28T19:19:06.423579" elapsed="0.001013"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:08.207998" level="INFO">POST Request : url=https://petstore.swagger.io/v2/pet 
+ path_url=/v2/pet 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '156', 'Content-Type': 'application/json'} 
+ body=b'{"id": 55, "category": {"id": 55, "name": "jason"}, "name": "doggie", "photoUrls": ["string"], "tags": [{"id": 55, "name": "jason"}], "status": "available"}' 
+ </msg>
+<msg time="2026-04-28T19:19:08.207998" level="INFO">POST Response : url=https://petstore.swagger.io/v2/pet 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 13:49:07 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":55,"category":{"id":55,"name":"jason"},"name":"doggie","photoUrls":["string"],"tags":[{"id":55,"name":"jason"}],"status":"available"} 
+ </msg>
+<msg time="2026-04-28T19:19:08.209050" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petApi</arg>
+<arg>/pet</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T19:19:06.424592" elapsed="1.784458"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-28T19:19:08.211044" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-28T19:19:08.210024" elapsed="0.001546"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T19:19:08.211570" elapsed="0.001047"/>
+</kw>
+<status status="PASS" start="2026-04-28T19:19:06.418569" elapsed="1.795024"/>
+</test>
+<test id="s1-t2" name="Upload Image" line="21">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:08.216589" level="INFO">Creating Session using : alias=petApi, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>petApi</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-28T19:19:08.215592" elapsed="0.000997"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-28T19:19:08.217589" level="INFO">${form_data} = {'additionalMetadata': 'Jason Image'}</msg>
+<var>${form_data}</var>
+<arg>additionalMetadata=Jason Image</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-28T19:19:08.216589" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-28T19:19:08.218589" level="INFO">${file_path} = C:\Users\BHAVRAJ SAIREM\Desktop\CAPG_TRACK_COURSE\DAY_WISE\robot_capg\Robot_Req\ROBOT_REQUEST/Data/jason_image.jpg</msg>
+<var>${file_path}</var>
+<arg>C:\\Users\\BHAVRAJ SAIREM\\Desktop\\CAPG_TRACK_COURSE\\DAY_WISE\\robot_capg\\Robot_Req\\ROBOT_REQUEST/Data/jason_image.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-28T19:19:08.217589" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-28T19:19:08.218589" level="INFO">${file} = {'file': 'C:\\Users\\BHAVRAJ SAIREM\\Desktop\\CAPG_TRACK_COURSE\\DAY_WISE\\robot_capg\\Robot_Req\\ROBOT_REQUEST/Data/jason_image.jpg'}</msg>
+<var>${file}</var>
+<arg>file=${file_path}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-28T19:19:08.218589" elapsed="0.001000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:10.017764" level="INFO">POST Request : url=https://petstore.swagger.io/v2/pet/55/uploadImage 
+ path_url=/v2/pet/55/uploadImage 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '364', 'Content-Type': 'multipart/form-data; boundary=39eae569422ab46457c37383b44c8fc7'} 
+ body=b'--39eae569422ab46457c37383b44c8fc7\r\nContent-Disposition: form-data; name="additionalMetadata"\r\n\r\nJason Image\r\n--39eae569422ab46457c37383b44c8fc7\r\nContent-Disposition: form-data; name="file"; filename="file"\r\n\r\nC:\\Users\\BHAVRAJ SAIREM\\Desktop\\CAPG_TRACK_COURSE\\DAY_WISE\\robot_capg\\Robot_Req\\ROBOT_REQUEST/Data/jason_image.jpg\r\n--39eae569422ab46457c37383b44c8fc7--\r\n' 
+ </msg>
+<msg time="2026-04-28T19:19:10.017764" level="INFO">POST Response : url=https://petstore.swagger.io/v2/pet/55/uploadImage 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 13:49:09 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"additionalMetadata: Jason Image\nFile uploaded to ./file, 114 bytes"} 
+ </msg>
+<msg time="2026-04-28T19:19:10.017764" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petApi</arg>
+<arg>/pet/55/uploadImage</arg>
+<arg>data=${form_data}</arg>
+<arg>files=${file}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T19:19:08.219589" elapsed="1.798175"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-28T19:19:10.020977" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-28T19:19:10.018963" elapsed="0.002014"/>
+</kw>
+<status status="PASS" start="2026-04-28T19:19:08.215592" elapsed="1.806397"/>
+</test>
+<test id="s1-t3" name="Find Pet" line="43">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:10.023977" level="INFO">Creating Session using : alias=petApi, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>petApi</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-28T19:19:10.022987" elapsed="0.001498"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:11.768972" level="INFO">GET Request : url=https://petstore.swagger.io/v2/pet/55 
+ path_url=/v2/pet/55 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-04-28T19:19:11.768972" level="INFO">GET Response : url=https://petstore.swagger.io/v2/pet/55 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 13:49:10 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":55,"category":{"id":55,"name":"jason"},"name":"doggie","photoUrls":["string"],"tags":[{"id":55,"name":"jason"}],"status":"available"} 
+ </msg>
+<msg time="2026-04-28T19:19:11.769960" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petApi</arg>
+<arg>/pet/55</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T19:19:10.024485" elapsed="1.745475"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-28T19:19:11.771945" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-28T19:19:11.770960" elapsed="0.000985"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T19:19:11.772928" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2026-04-28T19:19:10.022987" elapsed="1.750940"/>
+</test>
+<test id="s1-t4" name="Update Pet" line="50">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:11.775928" level="INFO">Creating Session using : alias=petApi, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>petApi</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-28T19:19:11.775928" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-28T19:19:11.776926" level="INFO">${form_data} = {'name': 'Jason', 'status': 'sold'}</msg>
+<var>${form_data}</var>
+<arg>name=Jason</arg>
+<arg>status=sold</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-28T19:19:11.776926" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:13.572361" level="INFO">POST Request : url=https://petstore.swagger.io/v2/pet/55 
+ path_url=/v2/pet/55 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '22', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=Jason&amp;status=sold 
+ </msg>
+<msg time="2026-04-28T19:19:13.572361" level="INFO">POST Response : url=https://petstore.swagger.io/v2/pet/55 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 13:49:12 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"55"} 
+ </msg>
+<msg time="2026-04-28T19:19:13.572361" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petApi</arg>
+<arg>/pet/55</arg>
+<arg>data=${form_data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T19:19:11.777933" elapsed="1.794428"/>
+</kw>
+<status status="PASS" start="2026-04-28T19:19:11.774929" elapsed="1.799396"/>
+</test>
+<test id="s1-t5" name="Delete Pet" line="62">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:13.576316" level="INFO">Creating Session using : alias=petApi, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>petApi</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-28T19:19:13.576316" elapsed="0.001008"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T19:19:15.371112" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/pet/55 
+ path_url=/v2/pet/55 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2026-04-28T19:19:15.371112" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/pet/55 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 13:49:14 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"55"} 
+ </msg>
+<msg time="2026-04-28T19:19:15.372062" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>petApi</arg>
+<arg>/pet/55</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T19:19:13.578349" elapsed="1.793713"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-28T19:19:15.374068" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-28T19:19:15.373069" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2026-04-28T19:19:13.575324" elapsed="1.798744"/>
+</test>
+<status status="PASS" start="2026-04-28T19:19:05.849122" elapsed="9.526946"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Main2" id="s1" pass="5" fail="0" skip="0">Main2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

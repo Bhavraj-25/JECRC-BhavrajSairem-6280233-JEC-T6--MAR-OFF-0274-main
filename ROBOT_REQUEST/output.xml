@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.5 on win32)" generated="2026-04-28T14:19:29.604445" rpa="false" schemaversion="5">
+<suite id="s1" name="ROBOT REQUEST" source="C:\Users\BHAVRAJ SAIREM\Desktop\CAPG_TRACK_COURSE\DAY_WISE\robot_capg\Robot_Req\ROBOT_REQUEST">
+<suite id="s1-s1" name="Main" source="C:\Users\BHAVRAJ SAIREM\Desktop\CAPG_TRACK_COURSE\DAY_WISE\robot_capg\Robot_Req\ROBOT_REQUEST\main.robot">
+<test id="s1-s1-t1" name="E2E" line="65">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-04-28T14:19:30.034878" level="INFO">Creating Session using : alias=e2e, url=https://petstore.swagger.io/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>e2e</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-28T14:19:30.034878" elapsed="0.001002"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-28T14:19:30.037401" level="INFO">${payload} = {'id': '123', 'petId': '12345', 'quantity': '1', 'shipDate': '2024-06-01T12:00:00.000', 'status': 'placed', 'complete': 'true'}</msg>
+<var>${payload}</var>
+<arg>id=123</arg>
+<arg>petId=12345</arg>
+<arg>quantity=1</arg>
+<arg>shipDate=2024-06-01T12:00:00.000</arg>
+<arg>status=placed</arg>
+<arg>complete=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-28T14:19:30.036511" elapsed="0.000890"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T14:19:32.418764" level="INFO">POST Request : url=https://petstore.swagger.io/v2/store/order 
+ path_url=/v2/store/order 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '127', 'Content-Type': 'application/json'} 
+ body=b'{"id": "123", "petId": "12345", "quantity": "1", "shipDate": "2024-06-01T12:00:00.000", "status": "placed", "complete": "true"}' 
+ </msg>
+<msg time="2026-04-28T14:19:32.419743" level="INFO">POST Response : url=https://petstore.swagger.io/v2/store/order 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 08:49:31 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":123,"petId":12345,"quantity":1,"shipDate":"2024-06-01T12:00:00.000+0000","status":"placed","complete":true} 
+ </msg>
+<msg time="2026-04-28T14:19:32.419743" level="INFO">${res1} = &lt;Response [200]&gt;</msg>
+<var>${res1}</var>
+<arg>e2e</arg>
+<arg>/store/order</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T14:19:30.037401" elapsed="2.382342"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-28T14:19:32.422748" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${res1.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.419743" elapsed="0.003005"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-28T14:19:32.424743" level="INFO">${body} = {'id': 123, 'petId': 12345, 'quantity': 1, 'shipDate': '2024-06-01T12:00:00.000+0000', 'status': 'placed', 'complete': True}</msg>
+<var>${body}</var>
+<arg>${res1.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.423743" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-28T14:19:32.425764" level="INFO">${ORDER_ID} = 123</msg>
+<var>${ORDER_ID}</var>
+<arg>${body}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.424743" elapsed="0.001021"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Created an order</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.426744" elapsed="0.001020"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T14:19:32.987301" level="INFO">GET Request : url=https://petstore.swagger.io/v2/store/order/123 
+ path_url=/v2/store/order/123 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-04-28T14:19:32.988336" level="INFO">GET Response : url=https://petstore.swagger.io/v2/store/order/123 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 08:49:31 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"id":123,"petId":12345,"quantity":1,"shipDate":"2024-06-01T12:00:00.000+0000","status":"placed","complete":true} 
+ </msg>
+<msg time="2026-04-28T14:19:32.988336" level="INFO">${res2} = &lt;Response [200]&gt;</msg>
+<var>${res2}</var>
+<arg>e2e</arg>
+<arg>/store/order/${ORDER_ID}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.427764" elapsed="0.560572"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-28T14:19:32.990191" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${res2.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.989362" elapsed="0.000829"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Got the order</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.991216" elapsed="0.001434"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2026-04-28T14:19:33.489635" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/store/order/123 
+ path_url=/v2/store/order/123 
+ headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2026-04-28T14:19:33.490937" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/store/order/123 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 28 Apr 2026 08:49:32 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"123"} 
+ </msg>
+<msg time="2026-04-28T14:19:33.490937" level="INFO">${res3} = &lt;Response [200]&gt;</msg>
+<var>${res3}</var>
+<arg>e2e</arg>
+<arg>/store/order/${ORDER_ID}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-28T14:19:32.993666" elapsed="0.497271"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-28T14:19:33.492988" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${res3.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-28T14:19:33.491933" elapsed="0.001055"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Deleted the order by ID</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-28T14:19:33.494086" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-28T14:19:30.033860" elapsed="3.461224"/>
+</test>
+<status status="PASS" start="2026-04-28T14:19:29.690600" elapsed="3.804484"/>
+</suite>
+<status status="PASS" start="2026-04-28T14:19:29.607920" elapsed="3.890151"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="ROBOT REQUEST" id="s1" pass="1" fail="0" skip="0">ROBOT REQUEST</stat>
+<stat name="Main" id="s1-s1" pass="1" fail="0" skip="0">ROBOT REQUEST.Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
